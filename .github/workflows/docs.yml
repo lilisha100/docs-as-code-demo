@@ -24,7 +24,7 @@ jobs:
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v2
-        - uses: .github/workflows/action.yml # Uses the action.yml
+        - uses: ./ # Uses the action.yml
           with:
             reporter: github-check
             fail_on_error: true
