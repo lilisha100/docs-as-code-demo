@@ -22,7 +22,7 @@ jobs:
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v2
-        - uses: ./ # Uses an action in the root directory
+        - uses: .github/workflows/ # Uses the action.yml
           with:
             reporter: github-check
             fail_on_error: true
@@ -30,7 +30,7 @@ jobs:
             debug: true
           env:
             GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-            
+
   generate-docs:
 
     runs-on: windows-latest
