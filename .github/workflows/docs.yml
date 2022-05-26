@@ -24,12 +24,13 @@ jobs:
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v2
-        - uses: ./ # Uses the action.yml
+        - uses: errata-ai/vale-action@reviewdog
           with:
-            reporter: github-check
+            reporter: github-pr-check
             fail_on_error: true
-            level: warning
+            level: error
             debug: true
+            files: ./docs/
           env:
             GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
