@@ -2,6 +2,8 @@ tasks:
   - name: Install mono
     before: sh install-mono.sh 
     command: mono docfx/docfx.exe docs/docfx.json --serve
+  - name: working terminal
+    init: echo "the working terminal"  
 ports:
   - port: 8080
     onOpen: open-browser
