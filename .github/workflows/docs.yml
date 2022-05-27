@@ -28,8 +28,7 @@ jobs:
           with:
             reporter: github-pr-check
             fail_on_error: true
-            level: warning
-            debug: true
+            level: error
             files: ./docs/
           env:
             GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
