@@ -1,5 +1,5 @@
 tasks:
   - init: |
-      echo 'TODO: build project'
+      docfx docfx.json --serve
     command: |
       echo 'TODO: start app'
