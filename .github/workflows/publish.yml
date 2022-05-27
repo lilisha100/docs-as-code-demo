@@ -1,10 +1,9 @@
-name: Docs
+name: Publish docs
 
 on:
-  pull_request:
+  push:
     branches:
     - main
-    - dev
 
 jobs:
   vale:
@@ -42,7 +41,6 @@ jobs:
       continue-on-error: false
 
     - name: Publish
-      if: github.event.pull_request.merged == 'true'
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}

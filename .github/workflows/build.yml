@@ -1,0 +1,42 @@
+name: Build doc
+
+on:
+  pull_request:
+    branches:
+    - main
+    - dev
+
+jobs:
+  vale:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: errata-ai/vale-action@reviewdog
+        with:
+          reporter: github-pr-check
+          fail_on_error: true
+          level: error
+          files: ./docs/
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+  generate-docs:
+    needs: [vale]
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Setup .NET 6.0
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 6.0.x
+
+    - name: Setup DocFX
+      uses: crazy-max/ghaction-chocolatey@v1
+      with:
+        args: install docfx
+
+    - name: DocFX Build
+      working-directory: docs
+      run: docfx .\docfx.json
+      continue-on-error: false
