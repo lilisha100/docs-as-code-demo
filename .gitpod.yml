@@ -1,15 +1,15 @@
 tasks:
-  - name: Install Hugo and Dependencies
-    before: brew install docfx && npm install && sudo apt install git-restore-mtime
-    init: git restore-mtime --force
-    command: docfx ./docfx.json
+  - name: Install mono
+    before: sudo apt install gnupg ca-certificates | sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF| echo "deb https://download.mono-project.com/repo/ubuntu stable-focal main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list| sudo apt update 
+    init: sudo apt install mono-devel
+    command: mono docfx/docfx.exe docs/docfx.json
 ports:
-  - port: 1313
+  - port: 8080
     onOpen: open-browser
 github:
   prebuilds:
     # enable for the master/default branch (defaults to true)
-    master: false
+    master: true
 # enable for all branches in this repo (defaults to false)
     branches: false
 # enable for pull requests coming from this repo (defaults to true)
@@ -20,7 +20,5 @@ github:
     addComment: true
 vscode:
   extensions:
-    - bungcip.better-toml
-    - budparr.language-hugo-vscode
     - eliostruyf.vscode-front-matter
     - valentjn.vscode-ltex
