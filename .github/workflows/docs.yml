@@ -5,24 +5,20 @@ on:
     branches:
     - main
     - dev
-    paths:
-    - docs/**
-    - .github/workflows/docs.yml
-  workflow_dispatch:
 
 jobs:
   vale:
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v2
-        - uses: errata-ai/vale-action@reviewdog
-          with:
-            reporter: github-pr-check
-            fail_on_error: true
-            level: error
-            files: ./docs/
-          env:
-            GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: errata-ai/vale-action@reviewdog
+        with:
+          reporter: github-pr-check
+          fail_on_error: true
+          level: error
+          files: ./docs/
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
   generate-docs:
     needs: [vale]
