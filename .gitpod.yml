@@ -1,7 +1,7 @@
 tasks:
   - name: Install mono
     before: sh install-mono.sh 
-    command: mono docfx/docfx.exe docs/docfx.json --serve
+    init: mono docfx/docfx.exe docs/docfx.json --serve
   - name: working terminal
     init: echo "the working terminal"  
 ports:
@@ -10,7 +10,8 @@ ports:
 github:
   prebuilds:
     # enable for the master/default branch (defaults to true)
-    master: false
+    main: false
+    dev: false
 # enable for all branches in this repo (defaults to false)
     branches: false
 # enable for pull requests coming from this repo (defaults to true)
