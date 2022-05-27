@@ -1,14 +1,6 @@
 name: Docs
 
 on:
-  push:
-    branches:
-    - main
-    - dev
-    paths:
-    - src/**
-    - docs/**
-    - .github/workflows/docs.yml
   pull_request:
     branches:
     - main
@@ -20,7 +12,6 @@ on:
 
 jobs:
   vale:
-      name: runner / vale
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v2
@@ -34,9 +25,8 @@ jobs:
             GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
   generate-docs:
-
-    runs-on: windows-latest
     needs: [vale]
+    runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
 
