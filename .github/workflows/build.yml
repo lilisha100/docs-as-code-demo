@@ -40,8 +40,12 @@ jobs:
       working-directory: docs
       run: docfx .\docfx.json
       continue-on-error: false
-      
-    - name: Check HTML
-      uses: chabad360/htmlproofer@master
-      with:
-        directory: "./site" 
+  
+  check-html:
+     needs: [generate-docs]
+     runs-on: ubuntu-latest
+     steps:
+     - uses: chabad360/htmlproofer@master
+       with:
+        directory: ./docs/_site
+  
