@@ -40,13 +40,7 @@ jobs:
       working-directory: docs
       run: docfx .\docfx.json
       continue-on-error: false
-  
-  check-html:
-     needs: [generate-docs]
-     runs-on: ubuntu-latest
-     steps:
-     - uses: actions/checkout@v2
-     - uses: chabad360/htmlproofer@master
-       with:
-        directory: "./docs/_site"
+
+    - name: Check HTML
+      run: htmltest ./docs/_site  
   
