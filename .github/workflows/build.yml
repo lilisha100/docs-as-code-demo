@@ -48,5 +48,5 @@ jobs:
      - uses: actions/checkout@v2
      - uses: chabad360/htmlproofer@master
        with:
-        directory: ./docs/_site
+        directory: "./docs/_site"
   
