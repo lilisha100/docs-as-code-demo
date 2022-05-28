@@ -45,6 +45,7 @@ jobs:
      needs: [generate-docs]
      runs-on: ubuntu-latest
      steps:
+     - uses: actions/checkout@v2
      - uses: chabad360/htmlproofer@master
        with:
         directory: ./docs/_site
