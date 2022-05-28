@@ -40,3 +40,8 @@ jobs:
       working-directory: docs
       run: docfx .\docfx.json
       continue-on-error: false
+      
+    - name: Check HTML
+      uses: chabad360/htmlproofer@master
+        with:
+          directory: "./site" 
