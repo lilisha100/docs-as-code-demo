@@ -6,29 +6,34 @@ on:
     - main
 
 jobs:
-  publish-docs:
+  publish-doc:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: errata-ai/vale-action@reviewdog
+      - name: Run Vale
+        uses: errata-ai/vale-action@reviewdog
         with:
-          reporter: github-pr-check
           fail_on_error: true
           level: error
-          files: ./docs/
+          files: docs
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - uses: nikeee/docfx-action@v1.0.0
         name: Build Documentation
         with:
-          args: ./docs/docfx.json 
+          args: docs/docfx.json 
 
       - name: Check HTML
-        uses: chabad360/htmlproofer@master
+        uses: anishathalye/proof-html@v1
         with:
-          directory: ./docs/_site 
-    
+          directory: docs/_site
+          empty_alt_ignore: true
+          enforce_https: false
+          check_external_hash: false
+          check_favicon: false
+          check_img_http: false
+
       - name: publish to gh
         uses: peaceiris/actions-gh-pages@v3
         with:
