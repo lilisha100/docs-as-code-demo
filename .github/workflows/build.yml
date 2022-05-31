@@ -7,7 +7,7 @@ on:
     - dev
 
 jobs:
-  vale:
+  build-doc:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -26,8 +26,8 @@ jobs:
           args: docs/docfx.json 
 
       - name: Check HTML
-        uses: chabad360/htmlproofer@master
+        uses: anishathalye/proof-html@v1
         with:
           directory: docs/_site
-          arguments: --ignore-missing-alt      
+          empty_alt_ignore: true      
 
