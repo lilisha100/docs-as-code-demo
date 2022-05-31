@@ -33,4 +33,10 @@ Stylizer
 Resharper
 Async
 namespace
-assembly
+readonly
+Overridables
+Finalizer
+const
+enum
+devs
+Nustache
