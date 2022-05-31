@@ -29,5 +29,9 @@ jobs:
         uses: anishathalye/proof-html@v1
         with:
           directory: docs/_site
-          empty_alt_ignore: true      
+          empty_alt_ignore: true
+          enforce_https: false
+          check_external_hash: false
+          check_favicon: false
+          check_img_http: false      
 
