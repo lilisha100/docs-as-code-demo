@@ -18,7 +18,6 @@ target/
 /**/_site/
 .vscode/
 .vs/
-docfx.consol.*
 
 ###############
 #  temp file  #
@@ -41,5 +40,4 @@ debugSettings.json
 launchSettings.json
 project.lock.json
 *.sublime-workspace
-nuget.exe
-packages-lock.json
+
