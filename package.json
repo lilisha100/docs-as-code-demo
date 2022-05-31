@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "docfx": "npm-watch build_serve",
-    "build_serve": "docfx build .\\/docs\\/docfx.json --serve"
+    "build_serve": "mono docfx.console.2.59.2/tools/docfx.exe docs/docfx.json --serve"
   },
   "watch": {
     "build_serve": {
@@ -22,5 +22,9 @@
   },
   "devDependencies": {
     "npm-watch": "^0.11.0"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "nuget": "^2.0.2"
   }
 }

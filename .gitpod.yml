@@ -1,11 +1,12 @@
 tasks:
   - name: Install docfx
-    before: npm i docfx-dev && npm install 
-    init: npm run docfx
+    before: sh install-mono.sh 
+    init: npm install
+    command: npm run docfx
   - name: working terminal
     init: echo "the working terminal"  
 ports:
-  - port: 8080
+  - port: 8000
     onOpen: open-browser
 github:
   prebuilds:
