@@ -7,7 +7,7 @@ on:
     - dev
 
 jobs:
-  build-doc:
+  vale:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -20,11 +20,19 @@ jobs:
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
+  build-doc:
+    runs-on: ubuntu-latest
+    needs: [vale]
+    steps:
+      - uses: actions/checkout@v2
       - uses: nikeee/docfx-action@v1.0.0
         name: Build Documentation
         with:
           args: docs/docfx.json 
-
+          
+  check-html:
+    runs-on: ubuntu-latest
+    needs: [build-doc]
       - name: Check HTML
         uses: anishathalye/proof-html@v1
         with:
