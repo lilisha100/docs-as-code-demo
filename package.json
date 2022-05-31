@@ -8,10 +8,10 @@
   "watch": {
     "build_serve": {
       "patterns": [
-        "templates/**/*",
-        "api/**/*",
-        "articles/**/*",
-        "./*.md"
+        "docs/articles/**/*",
+        "docs/api/**/*",
+        "docs/articles/**/*",
+        "docs/*.md"
       ],
       "extensions": "md,yml,css,partial",
       "quiet": true,
