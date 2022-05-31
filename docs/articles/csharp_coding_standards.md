@@ -19,14 +19,6 @@ This section contains general C# coding standards which can be applied to any ty
 
 It does not pretend to be a tutorial on C#. It only includes a set of limitations and recommendations focused on clarifying the development.
 
-Tools
-----------------
-
-* [Resharper](http://www.jetbrains.com/resharper/) is a great 3rd party code cleanup and style tool.
-* [StyleCop](http://stylecop.codeplex.com/) analyzes C# source code to enforce a set of style and consistency rules and has been integrated into many 3rd party development tools such as Resharper.
-* [FxCop](http://codebox/SDLFxCop) is an application that analyzes managed code assemblies (code that targets the .NET Framework common language runtime) and reports information about the assemblies, such as possible design, localization, performance, and security improvements.
-* [C# Stylizer](http://toolbox/22561) does many of the style rules automatically
-
 Highlights of Coding Standards
 ------------------------------
 
