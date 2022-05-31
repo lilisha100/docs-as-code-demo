@@ -7,36 +7,32 @@ on:
     - dev
 
 jobs:
-  vale:
+  build-doc:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: errata-ai/vale-action@reviewdog
+      - name: Run Vale
+        uses: errata-ai/vale-action@reviewdog
         with:
-          reporter: github-pr-check
           fail_on_error: true
           level: error
-          files: ./docs/
+          files: docs
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
-  generate-docs:
-    needs: [vale]
-    runs-on: windows-latest
-    steps:
-    - uses: actions/checkout@v2
+      - uses: nikeee/docfx-action@v1.0.0
+        name: Build Documentation
+        with:
+          args: docs/docfx.json 
 
-    - name: Setup .NET 6.0
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 6.0.x
+      - name: Check HTML
+        uses: anishathalye/proof-html@v1
+        with:
+          directory: docs/_site
+          empty_alt_ignore: true
+          enforce_https: false
+          check_external_hash: false
+          check_favicon: false
+          check_img_http: false
+   
 
-    - name: Setup DocFX
-      uses: crazy-max/ghaction-chocolatey@v1
-      with:
-        args: install docfx
-
-    - name: DocFX Build
-      working-directory: docs
-      run: docfx .\docfx.json
-      continue-on-error: false
