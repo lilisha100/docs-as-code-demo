@@ -33,7 +33,5 @@ jobs:
           enforce_https: false
           check_external_hash: false
           check_favicon: false
-          check_img_http: false
-          url_ignore: |
-            https://www.myget.org/F/aspnetrelease/api/v2/      
+          check_img_http: false   
 
