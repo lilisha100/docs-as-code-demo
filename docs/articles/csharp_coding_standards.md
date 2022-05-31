@@ -99,7 +99,7 @@ The class definition contains class members in the following order, from *less* 
 	2. `if (a == b)`
 
 ### Cross-platform coding
-Our code should supports multiple operating systems. Don't assume we only run (and develop) on Windows. Code should be sensitvie to the differences between OS's. Here are some specifics to consider.
+Our code should supports multiple operating systems. Don't assume we only run (and develop) on Windows. Code should be sensitive to the differences between OS's. Here are some specifics to consider.
 
 * **DO** use `Enviroment.NewLine` instead of hard-coding the line break instead of `\r\n`, as Windows uses `\r\n` and OSX/Linux uses `\n`.
 
@@ -113,7 +113,7 @@ Our code should supports multiple operating systems. Don't assume we only run (a
 #### Assembly naming
 The unit tests for the `Microsoft.Foo` assembly live in the `Microsoft.Foo.Tests` assembly.
 
-The functional tests for the `Microsoft.Foo` assmebly live in the `Microsoft.Foo.FunctionalTests` assmebly.
+The functional tests for the `Microsoft.Foo` assembly live in the `Microsoft.Foo.FunctionalTests` assembly.
 
 In general there should be exactly one unit test assebmly for each product runtime assembly. In general there should be one functional test assembly per repo. Exceptions can be made for both.
 
@@ -152,7 +152,7 @@ The crucial thing here is the `Act` stage is exactly one statement. That one sta
 int result = myObj.CallSomeMethod(GetComplexParam1(), GetComplexParam2(), GetComplexParam3());
 ```
 
-This style is not recomended because way too many things can go wrong in this one statement. All the `GetComplexParamN()` calls can throw for a variety of reasons unrelated to the test itself. It is thus unclear to someone running into a problem why the failure occured.
+This style is not recomended because way too many things can go wrong in this one statement. All the `GetComplexParamN()` calls can throw for a variety of reasons unrelated to the test itself. It is thus unclear to someone running into a problem why the failure occurred.
 
 The ideal pattern is to move the complex parameter building into the `Arrange section:
 

@@ -21,3 +21,16 @@ NuGet
 HTML
 Github
 tmpl
+doc
+docs
+Jint
+GitHub
+checkins
+rebase
+Preprocess
+JS
+Stylizer
+Resharper
+Async
+namespace
+assembly
