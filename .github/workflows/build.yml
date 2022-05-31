@@ -29,5 +29,5 @@ jobs:
         uses: chabad360/htmlproofer@master
         with:
           directory: docs/_site
-          arguments: --ignore_missing_alt      
+          arguments: --ignore-missing-alt      
 
