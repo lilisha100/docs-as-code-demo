@@ -23,10 +23,11 @@ jobs:
       - uses: nikeee/docfx-action@v1.0.0
         name: Build Documentation
         with:
-          args: ./docs/docfx.json 
+          args: docs/docfx.json 
 
       - name: Check HTML
         uses: chabad360/htmlproofer@master
         with:
-          directory: ./docs/_site      
+          directory: docs/_site
+          arguments: --ignore_missing_alt      
 
