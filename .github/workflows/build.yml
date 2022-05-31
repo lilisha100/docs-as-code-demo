@@ -21,11 +21,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
-      - name: Setup .NET 6.0
-        uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: 6.0.x
-
       - uses: nikeee/docfx-action@v1.0.0
         name: Build Documentation
         with:

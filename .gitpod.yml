@@ -1,7 +1,7 @@
 tasks:
   - name: Install mono
     before: sh install-mono.sh 
-    init: mono docfx/docfx.exe docs/docfx.json --serve
+    init: mono docfx.console.*/tools/docfx.exe docs/docfx.json --serve
   - name: working terminal
     init: echo "the working terminal"  
 ports:
