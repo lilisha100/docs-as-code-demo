@@ -1,1 +1,9 @@
 src
+http
+nuget
+docfx
+yaml
+docascode
+repo
+dnvm
+config

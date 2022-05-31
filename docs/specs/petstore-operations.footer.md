@@ -4,7 +4,7 @@ title: Pet Store APIs
 footer: *content
 ---
 
-### See Alsos
+### See Also
 
 See other REST APIs:
 * [Contacts API](../restapi/contacts_swagger2.json)
