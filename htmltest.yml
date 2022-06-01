@@ -1,0 +1,7 @@
+DirectoryPath: "docs/_site"
+EnforceHTTPS: false
+IgnoreDirs:
+- "lib"
+CacheExpires: "6h"
+CheckImages: false
+CheckInternalHash: false
