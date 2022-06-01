@@ -5,3 +5,4 @@ IgnoreDirs:
 CacheExpires: "6h"
 CheckImages: false
 CheckInternalHash: false
+CheckDoctype: false

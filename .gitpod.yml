@@ -1,6 +1,6 @@
 tasks:
   - name: Install docfx
-    before: sh install-mono.sh 
+    before: sh install-tools.sh 
     init: npm install
     command: npm run docfx
   - name: working terminal
