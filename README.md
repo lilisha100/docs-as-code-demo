@@ -1,8 +1,9 @@
 # A docs as code demo repo
 
-This is a docs as code demo repo. The following are set up to test, build, and publish the docs:
+This is a docs as code demo repo. The repo is set up with the following to preview, test, and build the docs:
 
-* GitHub action to build and publish the docs to the GitHub page
-* Vale to test the docs against your writing style guide
+* GitHub Action to build and publish the docs to the GitHub page
+* Vale to test the docs against the writing style guide
 * Docfx to build the doc
-* HTMLProofer to validate your HTML output
+* htmltest to validate the HTML output
+* Gitpod to edit and preview the doc
