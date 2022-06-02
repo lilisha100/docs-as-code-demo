@@ -4,7 +4,7 @@ This is a sample docfx documentation project. It contains .NET source code and m
 `docfx.json` is the configuration file for running `docfx`.
 `docfx` will generate a static website as similar to [http://docascode.github.io/docfx-seed](http://docascode.github.io/docfx-seed/index.html).
 
-## How to run
+## How to run instructions
 ### Under Windows
 * Download and unzip [docfx.zip](https://github.com/dotnet/docfx/releases/latest) to run `docfx.exe` directly!
 * Run `docfx` under current repo! Website will be generated under `_site` folder.
