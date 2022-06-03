@@ -7,7 +7,7 @@ on:
     - dev
 
 jobs:
-  build-doc:
+  lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -20,23 +20,17 @@ jobs:
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
+  build:
+    runs-on: ubuntu-latest
+    needs: [lint]
+    steps:
+      - uses: actions/checkout@v2
       - uses: nikeee/docfx-action@v1.0.0
         name: Build Documentation
         with:
-          args: docs/docfx.json 
-
-      #- name: Check HTML
-       # uses: anishathalye/proof-html@v1
-       # with:
-       #   directory: docs/_site
-       #   empty_alt_ignore: true
-       #   enforce_https: false
-       #   check_external_hash: false
-       #   check_favicon: false
-       #   check_img_http: false
+          args: docs/docfx.json        
       - name: Run htmltest
         uses: wjdp/htmltest-action@master
         with:
-          config: htmltest.yml    
-   
+          config: htmltest.yml
 
