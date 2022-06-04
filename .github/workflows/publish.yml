@@ -24,19 +24,14 @@ jobs:
         with:
           args: docs/docfx.json 
 
-      - name: Check HTML
-        uses: anishathalye/proof-html@v1
+      - name: Run htmltest
+        uses: wjdp/htmltest-action@master
         with:
-          directory: docs/_site
-          empty_alt_ignore: true
-          enforce_https: false
-          check_external_hash: false
-          check_favicon: false
-          check_img_http: false
+          config: htmltest.yml
 
-      - name: publish to gh
-        uses: peaceiris/actions-gh-pages@v3
+      - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: docs/_site
-          force_orphan: true
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_DOCS_AS_CODE_DEMO }}'
+          channelId: live
+          projectId: docs-as-code-demo
