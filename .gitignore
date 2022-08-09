@@ -43,4 +43,4 @@ launchSettings.json
 project.lock.json
 *.sublime-workspace
 nuget.*
-
+* .DS_store
