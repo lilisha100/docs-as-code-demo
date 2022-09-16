@@ -6,7 +6,7 @@ This is a sample docfx documentation project. It contains .NET source code and m
 
 ## How to run to somethinge
 ### Under Windows
-* Download and unzip [docfx.zip](https://github.com/dotnet/docfx/releases/latest) to run `docfx.exe` directly!
+* Download and unzip [docfx.zip](https://github.com/dotnet/docfx/releases/latesddd) to run `docfx.exe` directly!
 * Run `docfx` under current repo! Website will be generated under `_site` folder.
 * Run any web hosting tool to host `_site` folder, e.g. `docfx serve _site`.
 
