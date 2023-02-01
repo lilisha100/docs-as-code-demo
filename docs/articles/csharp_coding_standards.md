@@ -13,6 +13,20 @@ The coding standard will be used in conjunction with customized version of *Styl
 
 The aim of this section is to define a set of C# coding standards to be used by CAPS build team to guarantee maximum legibility, reliability, re-usability and homogeneity of our code. Each section is marked *Mandatory* or *Recommended*. *Mandatory* sections, will be enforced during code reviews as well as tools like *StyleCop* and *FxCop*, and code will not be considered complete until it is compliant.
 
+# [Linux](#tab/linux)
+
+Content for Linux...
+
+# [Windows](#tab/windows)
+
+Content for Windows...
+
+# [Mac](#tab/Mac)
+
+Content for Mac...
+
+---
+
 ### Scope
 
 This section contains general C# coding standards which can be applied to any type of application developed in C#, based on *[Framework Design Guidelines](http://msdn.microsoft.com/en-us/library/ms229042.aspx)*. 
